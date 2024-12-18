@@ -52,6 +52,12 @@ _Example:_ `api_token: ${{ secrets.BRIGHTSEC_TOKEN }}`
 
 _Example:_ `discovery_id: ${{ steps.start.outputs.id }}`
 
+### `project_id`
+
+**Required**. Provide project-id for the discovery.
+
+_Example:_ `project_id: ${{ vars.PROJECT_ID }}`
+
 ### `timeout`
 
 **Required**. Time for polling in seconds.

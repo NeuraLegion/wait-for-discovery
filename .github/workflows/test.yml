@@ -45,5 +45,5 @@ jobs:
           discovery_id: ${{ steps.discovery.outputs.id }}
           project_id: ${{ vars.PROJECT_ID }}
           hostname: ${{ vars.HOSTNAME }}
-          timeout: 300 # in general cases we'll have a timeout and it is good for this test
+          timeout: 360 # in general cases we'll have a timeout and it is good for this test
 
