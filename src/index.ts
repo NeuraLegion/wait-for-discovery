@@ -4,7 +4,6 @@ import { Discovery, getStatus, stopDiscovery } from './discovery';
 import * as core from '@actions/core';
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
-import { pathToFileURL } from 'url';
 
 const token = core.getInput('api_token', { required: true });
 const discoveryId = core.getInput('discovery_id', { required: true });

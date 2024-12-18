@@ -22,8 +22,8 @@ jobs:
           cp README.md release/
           cp action.yml release/
           cp -R dist/ release/dist/
-      - name: Start Bright Scan 🏁
-        id: scan
+      - name: Start Bright Discovery 🏁
+        id: discovery
         uses: NeuraLegion/run-discovery@release
         with:
           api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
@@ -42,7 +42,8 @@ jobs:
         continue-on-error: true
         with:
           api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
-          discovery_id: ${{ steps.scan.outputs.id }}
+          discovery_id: ${{ steps.discovery.outputs.id }}
           project_id: ${{ vars.PROJECT_ID }}
+          hostname: ${{ vars.HOSTNAME }}
           timeout: 300 # in general cases we'll have a timeout and it is good for this test
 
