@@ -33,7 +33,7 @@ jobs:
           discovery_types: |
             [ "crawler" ]
           crawler_urls: |
-            [ "https://security-crawl-maze.app/html/" ]
+            [ "https://security-crawl-maze.app/html/body/form" ]
           hosts_filter: |
             [ ]
       - name: Wait for discovery to finish ⏳

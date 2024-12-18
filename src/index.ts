@@ -45,7 +45,7 @@ asyncPoll(
       data: state.status
     };
 
-    const terminalStates = ['failed', 'disrupted', 'stopped', 'done'];
+    const terminalStates = ['failed', 'stopped', 'complete'];
 
     return {
       done: terminalStates.includes(state.status),
