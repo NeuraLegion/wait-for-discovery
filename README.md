@@ -42,7 +42,7 @@ More information is available on Bright’s:
 
 ### `api_token`
 
-**Required**. Your Bright API authorization token (key). You can generate it in the **Organization** section in [the Bright app](https://app.neuralegion.com/login). Find more information [here](https://docs.brightsec.com/docs/manage-your-organization#manage-organization-apicli-authentication-tokens).
+**Required**. Your Bright API authorization token (key). You can generate it in the **Organization** section in [the Bright app](https://app.brightsec.com/login). Find more information [here](https://docs.brightsec.com/docs/manage-your-organization#manage-organization-apicli-authentication-tokens).
 
 _Example:_ `api_token: ${{ secrets.BRIGHTSEC_TOKEN }}`
 
@@ -81,7 +81,7 @@ start_and_wait_scan:
   steps:
     - name: Start Bright discovery 🏁
       id: start
-      uses: NeuraLegion/run-discovery@release
+      uses: NeuraLegion/run-discovery@v1
       with:
         api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
         name: GitHub discovery ${{ github.sha }}
@@ -96,7 +96,7 @@ start_and_wait_scan:
       run: echo "The discovery was started on ${{ steps.start.outputs.url }}"
     - name: Wait for discovery to finish ⏳
       id: wait
-      uses: NeuraLegion/wait-for-discovery@release
+      uses: NeuraLegion/wait-for-discovery@v1
       with:
         api_token: ${{ secrets.BRIGHTSEC_TOKEN }}
         discovery_id: ${{ steps.start.outputs.id }}
